@@ -1,14 +1,30 @@
-import React from 'react'; 
+import React, { useState } from 'react'; 
+import api from './services/api';
+
 import beach from "./assets/beach.png";
 
 function App() {
+    const [tarefa_input , setTarefa_input] = useState('');
+
+    async function handleSubmit(e){
+        e.preventDefault();
+
+        //const response = await api.post('items', )
+    }
+
     return ( 
         <div>
             <section id="sectionTop">
                 <h1 className="center">uTask</h1>
             
-                <form className="center" post="">
-                    <input type="text" required placeholder="Add uma nova tarefa" ></input>
+                <form className="center" onSubmit={handleSubmit} >
+                    <input 
+                    type="text" 
+                    required 
+                    placeholder="Add uma nova tarefa"
+                    value={tarefa_input}
+                    onChange={e => setTarefa_input(e.target.value)} >
+                    </input>
                     <button type="submit" ></button>
                 </form>
 

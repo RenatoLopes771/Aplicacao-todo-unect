@@ -1,5 +1,6 @@
 const express = require("express");
 const moongose = require("mongoose");
+const cors = require('cors');
 const routes = require("./routes");
 
 const app = express();
@@ -15,6 +16,7 @@ moongose.connect(
     // }
 );
 
+app.use(cors()) // { origin: 'https://localhost:3000' }
 app.use(express.json());
 app.use(routes);
 

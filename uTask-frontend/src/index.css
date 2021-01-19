@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
-@media screen and (max-width: 340px) {
-  form button {
-    right: 5%;
-  }
-}
-
 * {
   margin: 0px;
   padding: 0px;
@@ -165,4 +159,16 @@ hr {
   opacity: 0.7;
 
   padding-top: 19px;
+}
+
+@media screen and (max-width: 340px) {
+  form button {
+    right: 5%;
+  }
+
+  #sectionTop input {
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
