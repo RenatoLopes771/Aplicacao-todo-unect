@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState, useEffect } from 'react'; 
 import api from './services/api';
 
 import beach from "./assets/beach.png";
@@ -6,16 +6,36 @@ import beach from "./assets/beach.png";
 function App() {
     const [tarefa_input , setTarefa_input] = useState('');
 
-    async function handleSubmit(e){
+    const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        async function loadTasks() {
+            const response = await api.get("/items/read");
+        
+            setTasks(response.data);
+        }
+
+        loadTasks();
+    }, []);
+
+    async function handleSubmit(e){ // Funcionando
         e.preventDefault();
 
-        //const response = await api.post('items', )
+        const response = await api.post("/items/create", 
+        {
+            "content": tarefa_input,
+        })
+
+        console.log(response.data);
+        setTarefa_input("");
     }
 
     return ( 
         <div>
             <section id="sectionTop">
                 <h1 className="center">uTask</h1>
+
+                <button id="refresh" >refresh!</button> {/* temporário */}
             
                 <form className="center" onSubmit={handleSubmit} >
                     <input 
@@ -36,6 +56,9 @@ function App() {
                 <h2 className="center" >TODO</h2>
 
                 <div id="div-meio" className="center" >
+                    {/*  {tasks.map(task => (
+                        <p>{tasks.id}</p>
+                    ))};    */}
                 </div>
 
                 <div id="nada" className="center" >
