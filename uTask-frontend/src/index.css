@@ -95,6 +95,53 @@ hr {
   border: 1px solid rgba(170, 169, 183, 0.6);
 }
 
+/* Tarefas */
+.task {
+  width: 408px;
+  height: 50px;
+
+  background: #fdfdfd;
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  z-index: 1;
+}
+
+.task p {
+  width: 311px;
+  height: 22px;
+
+  font-weight: normal;
+  text-align: left;
+  padding-left: 16px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 16px;
+  margin: 0;
+  margin-inline: 0;
+  margin-block: 0;
+
+  color: #111111;
+
+  z-index: 2;
+}
+
+#taskButtons {
+  width: 79px;
+  height: 47px;
+  right: 0px;
+  top: 0px;
+
+  z-index: 3;
+
+  position: absolute;
+}
+
+#taskButtons button {
+  color: red;
+}
+
 #sectionMiddle {
   padding-bottom: 36px;
 }
