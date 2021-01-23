@@ -96,50 +96,89 @@ hr {
 }
 
 /* Tarefas */
+
 .task {
   width: 408px;
   height: 50px;
+  margin-top: 6px;
 
   background: #fdfdfd;
   border: 1px solid #dfdfdf;
   box-sizing: border-box;
   border-radius: 4px;
 
-  z-index: 1;
+  position: relative;
 }
 
-.task p {
-  width: 311px;
-  height: 22px;
-
-  font-weight: normal;
-  text-align: left;
+.taskLeft {
+  width: 326px;
+  left: 0px;
+  top: 14px;
   padding-left: 16px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  font-size: 16px;
-  margin: 0;
-  margin-inline: 0;
-  margin-block: 0;
 
-  color: #111111;
-
-  z-index: 2;
-}
-
-#taskButtons {
-  width: 79px;
-  height: 47px;
-  right: 0px;
-  top: 0px;
-
-  z-index: 3;
-
+  box-sizing: border-box;
+  display: inline-block;
   position: absolute;
 }
 
-#taskButtons button {
-  color: red;
+.taskLeft p {
+  text-align: left;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+
+  color: #111111;
+}
+
+.taskRight {
+  width: 79px;
+  height: 48px;
+  right: 0px;
+  top: 0px;
+
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+}
+
+.taskGreen {
+  width: 31px;
+  height: 32.44px;
+  left: 13px;
+  top: 8.28px;
+  position: absolute;
+  background: url("./assets/green.png");
+}
+
+.taskRed {
+  height: 2px;
+  width: 14px;
+  right: 13px;
+  top: 25px;
+  position: absolute;
+  background: url("./assets/red.png");
+}
+
+.taskGreen:hover,
+.taskRed:hover,
+.taskD button {
+  cursor: pointer;
+}
+
+/* Tarefas feitas */
+
+.taskD button {
+  width: 30px;
+  height: 30px;
+  top: 9px;
+  right: 6px;
+  position: absolute;
+
+  background: url("./assets/redBig.png");
+}
+
+.taskD p {
+  opacity: 0.5;
 }
 
 #sectionMiddle {
@@ -162,7 +201,7 @@ hr {
   color: #5c5a6c;
 
   padding-top: 19px;
-  padding-bottom: 11px;
+  padding-bottom: 16px;
 }
 
 #nada {
@@ -175,7 +214,7 @@ hr {
   border-radius: 6px;
 
   display: block;
-  margin-top: 12px;
+  margin-top: 6px;
 
   clear: both;
 }
@@ -222,6 +261,11 @@ hr {
   opacity: 0.7;
 
   padding-top: 19px;
+  padding-bottom: 16px;
+}
+
+@media screen and (max-width: 420px) {
+  /* TODO: Fazer as tasks ficarem responsivas */
 }
 
 @media screen and (max-width: 340px) {

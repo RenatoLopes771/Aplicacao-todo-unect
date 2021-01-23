@@ -8,18 +8,20 @@ module.exports = {
     },
 
     async store(req, res) {
-        const { content } = req.body;
+        const { content, done } = req.body;
         const item = await Item.create({
             content,
+            done,
         });
         return res.json(item);
     },
 
     async update(req, res) {
-        const { id, newContent } = req.body;
+        const { id, newContent, newDone } = req.body;
         const item = await Item.findById(id);
         if (item) {
             item.content = newContent;
+            item.done = newDone;
             await item.save();
             return res.json({ success: true });
         } else {
