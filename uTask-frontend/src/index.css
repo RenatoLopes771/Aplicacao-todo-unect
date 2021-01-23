@@ -161,8 +161,14 @@ hr {
 
 .taskGreen:hover,
 .taskRed:hover,
-.taskD button {
+.taskD button:hover {
   cursor: pointer;
+}
+
+.taskGreen,
+.taskRed,
+.taskD button {
+  opacity: 0;
 }
 
 /* Tarefas feitas */
