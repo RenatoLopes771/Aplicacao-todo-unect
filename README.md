@@ -16,7 +16,8 @@ A página é acessível pelo http://localhost:3000/, para debug o backend é ace
 # A se fazer/desejável:
 
 1 - Não está responsivo, para de funcionar com arquivos de tela máxima de 450px
-2 - As notas tem um máximo de 48 caracteres para não ter quebra de linha, isso precisaria que elas tivessem tamanho dinâmico
+
+2 - As notas tem um máximo de 48 caracteres para não ter a quebra de linha, para tanto precisaria adicionar tamanho dinâmico as notas
 
 3 - O botão vermelho de "TODO" é muito pequeno
 
