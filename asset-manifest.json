@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Aplicacao-todo-unect/static/css/main.61863c80.chunk.css",
+    "main.js": "/Aplicacao-todo-unect/static/js/main.57811759.chunk.js",
+    "main.js.map": "/Aplicacao-todo-unect/static/js/main.57811759.chunk.js.map",
+    "runtime-main.js": "/Aplicacao-todo-unect/static/js/runtime-main.d86e9ff8.js",
+    "runtime-main.js.map": "/Aplicacao-todo-unect/static/js/runtime-main.d86e9ff8.js.map",
+    "static/js/2.7dcc8fa7.chunk.js": "/Aplicacao-todo-unect/static/js/2.7dcc8fa7.chunk.js",
+    "static/js/2.7dcc8fa7.chunk.js.map": "/Aplicacao-todo-unect/static/js/2.7dcc8fa7.chunk.js.map",
+    "static/js/3.f0f058ab.chunk.js": "/Aplicacao-todo-unect/static/js/3.f0f058ab.chunk.js",
+    "static/js/3.f0f058ab.chunk.js.map": "/Aplicacao-todo-unect/static/js/3.f0f058ab.chunk.js.map",
+    "index.html": "/Aplicacao-todo-unect/index.html",
+    "static/css/main.61863c80.chunk.css.map": "/Aplicacao-todo-unect/static/css/main.61863c80.chunk.css.map",
+    "static/js/2.7dcc8fa7.chunk.js.LICENSE.txt": "/Aplicacao-todo-unect/static/js/2.7dcc8fa7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d86e9ff8.js",
+    "static/js/2.7dcc8fa7.chunk.js",
+    "static/css/main.61863c80.chunk.css",
+    "static/js/main.57811759.chunk.js"
+  ]
+}
