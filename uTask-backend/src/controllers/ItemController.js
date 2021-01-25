@@ -20,8 +20,9 @@ module.exports = {
         const { id, newContent, newDone } = req.body;
         const item = await Item.findById(id);
         if (item) {
-            item.content = newContent;
+            item.content = item.content; // newContent, funcionalidade a fazer
             item.done = newDone;
+
             await item.save();
             return res.json({ success: true });
         } else {

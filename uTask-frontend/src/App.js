@@ -12,22 +12,22 @@ function App() {
 
     const [tarefa_input , setTarefa_input] = useState(''); // Inputs no form
 
-    useEffect(() => {   // Mostra as tasks
-        async function loadTasks() {
-            function equalsTrue(entry){
-                return entry.done === true; 
-            }
-
-            function equalsFalse(entry){
-                return entry.done === false;
-            }
-
-            const response = await api.get("/items/read");
-        
-            setTasks((response.data).filter(equalsTrue));
-            setTasksDone((response.data).filter(equalsFalse));
+    async function loadTasks() {
+        function equalsTrue(entry){
+            return entry.done === true; 
         }
 
+        function equalsFalse(entry){
+            return entry.done === false;
+        }
+
+        const response = await api.get("/items/read");
+    
+        setTasks((response.data).filter(equalsTrue));
+        setTasksDone((response.data).filter(equalsFalse));
+    }
+
+    useEffect(() => {   // Mostra as tasks
         loadTasks();
     }, []);
 
@@ -45,7 +45,7 @@ function App() {
         setTasks([...tasks, response.data]);
     }
 
-    async function handleDelete(id){
+    async function handleDelete(id){ // Deleta uma task (done ou não)
         function taskRemoval(array){
             return array._id !== id;
         }
@@ -59,6 +59,20 @@ function App() {
         setTasks(tasks.filter(taskRemoval));
         setTasksDone(tasksDone.filter(taskRemoval));
         
+    }
+
+    async function handleUpdate(id){
+        // funcionalidades que podem ser implementadas
+        const newContent = false; // Usuário mudar o texto
+        const newDone = false;    // Usuário colocar a task devolta no TODO
+
+        await api.put("/items/update", {
+            "id": id,
+            "newContent": newContent,
+            "newDone": newDone
+        })
+
+        loadTasks();
     }
 
     const praiaNada =
@@ -78,6 +92,7 @@ function App() {
                     type="text"
                     required 
                     placeholder="Add uma nova tarefa"
+                    alt="Add uma nova tarefa"
                     pattern=".{1,48}"
                     title="Entrada deve ter no máximo 48 caracteres"
                     value={tarefa_input}
@@ -101,14 +116,19 @@ function App() {
                             </div>
         
                             <div className="taskRight" >
-                                <button className="taskGreen" 
-                                alt="Marcar tarefa como concluída" 
-                                type="submit" >
+                                <button 
+                                className="taskGreen" 
+                                alt="Marcar como concluída" 
+                                title="Marcar como concluída"
+                                type="button"
+                                value={task._id}
+                                onClick={e => handleUpdate(e.currentTarget.value)} >
                                 </button>
 
                                 <button
                                 className="taskRed" 
                                 alt="Deletar tarefa" 
+                                title="Deletar tarefa"
                                 type="button"
                                 value={task._id}
                                 onClick={e => handleDelete(e.currentTarget.value)} >
@@ -136,6 +156,7 @@ function App() {
                             <div className="taskRight" >
                                 <button
                                 alt="Deletar tarefa" 
+                                title="Deletar tarefa"
                                 type="button"
                                 value={task._id}
                                 onClick={e => handleDelete(e.currentTarget.value)} >
