@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react'; 
-import api from './services/api';
+import api from './services/api'; // Axios
 
 // Imagens ---
 import beach from "./assets/beach.png";
-//import red from "./assets/"
 // -----------
 
 function App() {
-    const [tasks, setTasks] = useState([]);
-    const [tasksDone, setTasksDone] = useState([]);
+    const [tasks, setTasks] = useState([]);         // Tasks não feitas
+    const [tasksDone, setTasksDone] = useState([]); // Tasks feitas
 
     const [tarefa_input , setTarefa_input] = useState('');
 
-    useEffect(() => {
+    useEffect(() => {   // Mostra as tasks
         async function loadTasks() {
             function equalsTrue(entry){
                 return entry.done === true; 
@@ -34,7 +33,7 @@ function App() {
         loadTasks();
     }, []);
 
-    async function handleSubmit(e){ // Criar
+    async function handleSubmit(e){ // Criar nova task
         e.preventDefault();
 
         const response = await api.post("/items/create", 
@@ -49,12 +48,17 @@ function App() {
         setTasks([...tasks, response.data]);
     }
 
+    const praiaNada =
+        // Quando não tem tasks
+        <div id="nada" className="center" >
+            <img src={beach} alt="Foto de uma praia" className="" ></img>
+            <p>Nada por aqui!</p>
+        </div>;
+
     return ( 
         <div>
             <section id="sectionTop">
                 <h1 className="center">uTask</h1>
-
-                <button id="refresh" >refresh!</button> {/* temporário */}
 
                 <form className="center" onSubmit={handleSubmit} >
                     <input 
@@ -77,10 +81,7 @@ function App() {
                 <h2 className="center" >TODO</h2>
 
                 <div id="div-meio" >
-                    {/*  {tasks.map(task => (
-                        <p>{tasks.id}</p>
-                    ))};    */}
-                    {tasks.map(task => (
+                    {tasks.length > 0 && tasks.map(task => (
                         <div key={task._id} className="center task" >
                             <div className="taskLeft" >
                                 <p>{task.content}</p>
@@ -92,17 +93,9 @@ function App() {
                             </div>
                         </div>
                     ))}
-                </div>
 
-                {/*
-                Nada (praia)
-                
-                <div id="nada" className="center" >
-                    <img src={beach} alt="Foto de uma praia" className="" ></img>
-                    <p>Nada por aqui!</p>
+                    {tasks.length === 0 && praiaNada }
                 </div>
-                */}
-
             </section>
 
             <section id="sectionBottom" >
@@ -111,7 +104,7 @@ function App() {
                 <h2 className="center" >DONE</h2>
 
                 <div id="div-rodape" >
-                    {tasksDone.map(task => (
+                    {tasksDone.length > 0 && tasksDone.map(task => (
                         <div key={task._id} className="center task taskD" >
                             <div className="taskLeft" >
                                 <p><s>{task.content}</s></p>
@@ -122,6 +115,8 @@ function App() {
                             </div>
                         </div>
                     ))}
+
+                    {tasksDone.length === 0 && praiaNada }
                 </div>
             </section>
         </div>
