@@ -52,12 +52,10 @@ function App() {
         }
 
 
-        const response = await api.delete("/items/delete", 
-        {
-            "id": id
+        await api.delete("/items/delete", 
+        { 
+            data: {"id": id} 
         })
-
-        console.log(response);
 
         setTasks(tasks.filter(taskRemoval));
         setTasksDone(tasksDone.filter(taskRemoval));
@@ -138,8 +136,10 @@ function App() {
         
                             <div className="taskRight" >
                                 <button
-                                type = "submit"
-                                 >
+                                alt="Deletar tarefa" 
+                                type="button"
+                                value={task._id}
+                                onClick={e => handleDelete(e.currentTarget.value)} >
                                 </button>
                             </div>
                         </div>
