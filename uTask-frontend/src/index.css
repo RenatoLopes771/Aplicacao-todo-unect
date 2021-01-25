@@ -149,16 +149,20 @@ hr {
   background: url("./assets/red.png");
 }
 
+.taskGreen,
+.taskRed,
+.taskD button {
+  opacity: 0;
+}
+
 .taskGreen:hover,
 .taskRed:hover,
 .taskD button:hover {
   cursor: pointer;
 }
 
-.taskGreen,
-.taskRed,
-.taskD button {
-  opacity: 0;
+.task:hover button {
+  opacity: 1;
 }
 
 /* Tarefas feitas */

@@ -6,10 +6,11 @@ import beach from "./assets/beach.png";
 // -----------
 
 function App() {
+
     const [tasks, setTasks] = useState([]);         // Tasks não feitas
     const [tasksDone, setTasksDone] = useState([]); // Tasks feitas
 
-    const [tarefa_input , setTarefa_input] = useState('');
+    const [tarefa_input , setTarefa_input] = useState(''); // Inputs no form
 
     useEffect(() => {   // Mostra as tasks
         async function loadTasks() {
@@ -25,9 +26,6 @@ function App() {
         
             setTasks((response.data).filter(equalsTrue));
             setTasksDone((response.data).filter(equalsFalse));
-
-            console.log(tasks);
-            console.log(tasksDone);
         }
 
         loadTasks();
@@ -42,10 +40,28 @@ function App() {
             "done": true
         })
 
-        console.log(response.data);
+        console.log(response.data); // Temporário
         setTarefa_input("");
 
         setTasks([...tasks, response.data]);
+    }
+
+    async function handleDelete(id){
+        function taskRemoval(array){
+            return array._id !== id;
+        }
+
+
+        const response = await api.delete("/items/delete", 
+        {
+            "id": id
+        })
+
+        console.log(response);
+
+        setTasks(tasks.filter(taskRemoval));
+        setTasksDone(tasksDone.filter(taskRemoval));
+        
     }
 
     const praiaNada =
@@ -88,8 +104,18 @@ function App() {
                             </div>
         
                             <div className="taskRight" >
-                                <button className="taskGreen" alt="Marcar tarefa como concluída" ></button>
-                                <button className="taskRed" alt="Deletar tarefa" ></button>
+                                <button className="taskGreen" 
+                                alt="Marcar tarefa como concluída" 
+                                type="submit" >
+                                </button>
+
+                                <button
+                                className="taskRed" 
+                                alt="Deletar tarefa" 
+                                type="button"
+                                value={task._id}
+                                onClick={e => handleDelete(e.currentTarget.value)} >
+                                </button>
                             </div>
                         </div>
                     ))}
@@ -111,7 +137,10 @@ function App() {
                             </div>
         
                             <div className="taskRight" >
-                                <button  ></button>
+                                <button
+                                type = "submit"
+                                 >
+                                </button>
                             </div>
                         </div>
                     ))}
