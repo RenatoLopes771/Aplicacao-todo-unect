@@ -1,0 +1,45 @@
+#sectionTop {
+  top: 0px;
+  height: 196px;
+}
+
+#sectionTop h1 {
+  font-weight: 500;
+  font-size: 2.25em; /* 36px */
+
+  color: #00b0ff;
+
+  padding-top: 56px;
+  margin-bottom: 0px;
+}
+
+#sectionTop form {
+  margin-top: 24px;
+
+  bottom: 32px;
+}
+
+#sectionTop input {
+  width: 328px;
+  height: 49px;
+
+  background: rgba(170, 169, 183, 0.2);
+  border: 2px solid rgba(170, 169, 183, 0.4);
+  box-sizing: border-box;
+  border-radius: 25px;
+
+  padding-left: 20px;
+  padding-right: 24px;
+}
+
+#sectionTop button {
+  background: url(../assets/plus.png);
+
+  width: 25px;
+  height: 25px;
+
+  margin-left: -37px;
+  top: 134px;
+
+  position: absolute;
+}

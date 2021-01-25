@@ -1,0 +1,23 @@
+#sectionMiddle {
+  padding-bottom: 36px;
+}
+
+#divmeio {
+  /* ???? */
+  color: red;
+  width: 15px;
+  height: 12px;
+}
+
+#sectionMiddle h2 {
+  width: 58px;
+  height: 26px;
+
+  font-weight: 500;
+  font-size: 1.375em; /* 22px */
+
+  color: #5c5a6c;
+
+  padding-top: 19px;
+  padding-bottom: 16px;
+}

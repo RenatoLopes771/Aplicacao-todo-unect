@@ -1,0 +1,91 @@
+.task {
+  width: 408px;
+  height: 50px;
+  margin-top: 6px;
+
+  background: #fdfdfd;
+  border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  position: relative;
+}
+
+.taskLeft {
+  width: 326px;
+  left: 0px;
+  top: 14px;
+  padding-left: 16px;
+
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+}
+
+.taskLeft p {
+  text-align: left;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+
+  color: #111111;
+}
+
+.taskRight {
+  width: 79px;
+  height: 48px;
+  right: 0px;
+  top: 0px;
+
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+}
+
+.taskGreen {
+  width: 31px;
+  height: 32.44px;
+  left: 13px;
+  top: 8.28px;
+  position: absolute;
+  background: url("../assets/green.png");
+}
+
+.taskRed {
+  height: 2px;
+  width: 14px;
+  right: 13px;
+  top: 25px;
+  position: absolute;
+  background: url("../assets/red.png");
+}
+
+.taskGreen,
+.taskRed,
+.taskD button {
+  opacity: 0;
+}
+
+.taskGreen:hover,
+.taskRed:hover,
+.taskD button:hover {
+  cursor: pointer;
+}
+
+.task:hover button {
+  opacity: 1;
+}
+
+.taskD button {
+  width: 30px;
+  height: 30px;
+  top: 9px;
+  right: 6px;
+  position: absolute;
+
+  background: url("../assets/redBig.png");
+}
+
+.taskD p {
+  opacity: 0.5;
+}
