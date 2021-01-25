@@ -40,7 +40,6 @@ function App() {
             "done": true
         })
 
-        console.log(response.data); // Temporário
         setTarefa_input("");
 
         setTasks([...tasks, response.data]);
