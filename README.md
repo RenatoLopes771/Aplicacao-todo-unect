@@ -4,6 +4,8 @@
 
 Feito por Renato e Yuki.
 
+~~
+
 # Para rodar:
 
 1 - Colocar um nome de usuário e senha no comentário do arquivo .\todo-aplicacao\uTask-backend\src\index.js
@@ -13,3 +15,8 @@ Feito por Renato e Yuki.
 3 - Na pasta do frontend .\todo-aplicacao\uTask-frontend executar no terminal o comando **npm start**
 
 A página é acessível pelo http://localhost:3000/, para debug o backend é acessível por http://localhost:4040/
+~~
+
+# Branch Integração
+
+Tentativa de integração das duas pastas para uma só pasta
