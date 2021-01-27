@@ -7,6 +7,10 @@
   border: 0px;
 }
 
+:root {
+  --formWidth: 328px;
+}
+
 img {
   display: block;
 }
@@ -94,14 +98,12 @@ hr {
   /* TODO: Fazer as tasks ficarem responsivas */
 }
 
-@media screen and (max-width: 340px) {
-  form button {
-    right: 5%;
+@media screen and (max-width: 350px) {
+  :root {
+    --formWidth: 232px; /* Não funciona se não for com variavel */
   }
 
-  #sectionTop input {
-    width: 90%;
-    margin-left: 10px;
-    margin-right: 10px;
+  hr {
+    display: none;
   }
 }

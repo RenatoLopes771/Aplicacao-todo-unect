@@ -20,7 +20,7 @@
 }
 
 #sectionTop input {
-  width: 328px;
+  width: var(--formWidth);
   height: 49px;
 
   background: rgba(170, 169, 183, 0.2);
