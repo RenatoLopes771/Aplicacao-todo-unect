@@ -13,3 +13,7 @@ Feito por Renato e Yuki.
 3 - Na pasta do frontend .\todo-aplicacao\uTask-frontend executar no terminal o comando **npm start**
 
 A página é acessível pelo http://localhost:3000/, para debug o backend é acessível por http://localhost:4040/
+
+# Github Pages
+
+O deploy do github pages não inclui a intereação com o backend.
