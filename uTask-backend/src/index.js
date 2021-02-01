@@ -6,8 +6,7 @@ const routes = require("./routes");
 const app = express();
 
 moongose.connect(
-    //"mongodb+srv://admin:admin1@cluster0.n8sc6.mongodb.net/unect?retryWrites=true&w=majority",
-    "mongodb+srv://omnistack:xMrfShXMhQupvR0o@cluster0.m2fxy.mongodb.net/Cluster0?retryWrites=true&w=majority",
+    "mongodb+srv://usuario:senha@cluster0.m2fxy.mongodb.net/Cluster0?retryWrites=true&w=majority", // Usuário e senha
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
